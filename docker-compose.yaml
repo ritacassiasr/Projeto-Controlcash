@@ -10,7 +10,7 @@ services:
     volumes:
       - ./:/app
     ports:
-      - 3001:3001
+      - 3002:3002
     environment:
       MYSQL_USER: root
       MYSQL_PASSWORD: root
