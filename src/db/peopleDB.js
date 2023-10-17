@@ -6,6 +6,10 @@ const insert = (person) =>
       (first_name, last_name, email, phone) VALUES (?, ?, ?, ?)`,
     [person.firstName, person.lastName, person.email, person.phone]
   );
+
+const findAll = () => connection.execute("SELECT * FROM people");
+
 module.exports = {
   insert,
+  findAll,
 };
