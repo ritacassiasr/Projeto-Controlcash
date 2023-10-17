@@ -49,6 +49,13 @@ describe("Testando os endpoints de people", function () {
     expect(response.status).to.equal(200);
     expect(response.body).to.deep.equal(peopleList);
   });
+  it("Testando a listagem da pessoa pelo id 1", async function () {
+    sinon.stub(connection, "execute").resolves([[peopleList[0]]]);
+    const response = await chai.request(app).get("/people/1");
+
+    expect(response.status).to.equal(200);
+    expect(response.body).to.deep.equal(peopleList[0]);
+  });
 
   afterEach(sinon.restore);
 });
